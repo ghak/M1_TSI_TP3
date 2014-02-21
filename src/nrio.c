@@ -3534,7 +3534,7 @@ IMAGE_EXPORT(void) SavePPM_rgb8matrix(rgb8 **m, long nrl, long nrh, long ncl, lo
 
   /* enregistrement de l'image au format rpgm */
 
-  sprintf(buffer,"P6\n%d %d\n255\n",ncol, nrow);
+  sprintf(buffer,"P6\n%ld %ld\n255\n",ncol, nrow);
   fwrite(buffer,strlen(buffer),1,file);
   for(i=nrl; i<=nrh; i++)
      WritePNMrow((byte*)&(m[i][ncl]), ncol, file);
